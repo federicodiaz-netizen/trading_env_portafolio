@@ -1,0 +1,3 @@
+reemplazar la carpeta online en:
+
+\Users\usuario1\AppData\Local\anaconda3\envs\trading_env\Lib\site-packages\pyhomebroker\

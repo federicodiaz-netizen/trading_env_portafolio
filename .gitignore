@@ -1,0 +1,3 @@
+# Solo ocultamos las credenciales
+.env
+__pycache__/
