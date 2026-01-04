@@ -74,3 +74,4 @@ y utiliza la libreria pyhomebroker https://github.com/crapher/pyhomebroker
 ## Descargo de Responsabilidad
 
 Esta herramienta está destinada únicamente a fines educativos y personales. No es un consejo financiero. la modificacion de la libreria esta en version de prueba, por lo cual realizarlo bajo su responsabilidad.
+Esta version beta fue testeada con el broker Matriz Byma Id 284. el uso en otros brokers se ira testeando proximamente y se ira actualizando.
