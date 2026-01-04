@@ -61,6 +61,9 @@ y utiliza la libreria pyhomebroker https://github.com/crapher/pyhomebroker
     HB_PASS="TU CONTRASENA"
     ```
     Reemplaza los valores de ejemplo con tus credenciales reales.
+3. **Crckea la liberia pyhomebroker**
+    Encuentra la carpeta contenedora de la libreria (un ejemplo esta en el .txt) si es de un entorno de Anaconda buscarlo alli.
+    una ves encuentren la carpeta reemplazar la carpeta "online" por la que esta aqui en el repositorio.
 
 ## Uso
 
