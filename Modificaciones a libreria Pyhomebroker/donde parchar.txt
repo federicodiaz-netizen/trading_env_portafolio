@@ -1,3 +1,3 @@
-reemplazar la carpeta online en:
+reemplazar la carpeta online en una ruta similar a esta (en mi caso estoy en un entorno de anaconda que es lo mas recomendable):
 
 \Users\usuario1\AppData\Local\anaconda3\envs\trading_env\Lib\site-packages\pyhomebroker\
