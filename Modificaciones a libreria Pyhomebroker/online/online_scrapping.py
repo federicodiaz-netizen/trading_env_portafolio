@@ -139,32 +139,32 @@ class OnlineScrapping(OnlineCore):
         # Aquí es donde xlwings buscará los datos completos (Dinero + Acciones)
         self.personal_portfolio_gerencial = df[cols_reporte].copy()
 
-        # 5. PREPARACIÓN LIBRERÍA (FILTRADO TÉCNICO)
-        # Filtramos el dinero para que el robot de precios no falle
-        mask_dinero = df['Symbol'].astype(str).str.contains('Pesos|USD|Dolar|Extranjera', case=False, na=False)
-        df_lib = df[~mask_dinero].copy()
+        # 5. PREPARACIÓN LIBRERÍA
+        # Preparamos un DataFrame para la librería que contenga todos los activos 
+        # (incluyendo saldos) y las columnas necesarias ('symbol', 'settlement', etc.).
+        df_for_lib = df.copy()
 
         # Eliminamos basura técnica innecesaria
-        df_lib.drop(columns=['APERTURA', 'TESP', 'NERE', 'GTOS', 'DETA', 'AMPL', 'DIVI', 'Moneda', 'Hora'], inplace=True, errors='ignore')
+        df_for_lib.drop(columns=['APERTURA', 'TESP', 'NERE', 'GTOS', 'DETA', 'AMPL', 'DIVI', 'Moneda', 'Hora'], inplace=True, errors='ignore')
 
-        df_lib['symbol'] = df_lib['Symbol'].astype(str)
+        df_for_lib['symbol'] = df_for_lib['Symbol'].astype(str)
         
         # Corrección de plazo para Opciones vs Acciones
-        if '_Category' in df_lib.columns:
+        if '_Category' in df_for_lib.columns:
             def corregir_lib(row):
                 if 'opciones' in str(row['_Category']).lower(): return ''
                 return row['Settlement']
-            df_lib['settlement'] = df_lib.apply(corregir_lib, axis=1)
+            df_for_lib['settlement'] = df_for_lib.apply(corregir_lib, axis=1)
         else:
-            df_lib['settlement'] = df_lib['Settlement']
+            df_for_lib['settlement'] = df_for_lib['Settlement']
 
         # Rellenos obligatorios para la librería
-        df_lib['close'] = df_lib['LastPrice']
-        df_lib['last'] = df_lib['LastPrice']
+        df_for_lib['close'] = df_for_lib['LastPrice']
+        df_for_lib['last'] = df_for_lib['LastPrice']
         for col in ['open', 'high', 'low', 'bid', 'ask', 'volume', 'turnover']:
-            df_lib[col] = 0.0
+            df_for_lib[col] = 0.0
 
-        return [df_lib, pd.DataFrame()]
+        return [df_for_lib, pd.DataFrame()]
 
     def get_securities(self, board, settlement):
         """

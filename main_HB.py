@@ -156,11 +156,12 @@ while True:
         shtTest.range('S2').options(index=True, header=False).value = cauciones
         
         # 3. AQUÍ ES DONDE OCURRE LA ESCRITURA EN EL EXCEL
-        portfolio_actual = getattr(hb.online._scrapping, 'personal_portfolio_gerencial', None)
+        # Ahora 'portfolio' es la variable correcta: tiene los datos completos y se actualiza en tiempo real.
+        portfolio_actual = portfolio
         
         if portfolio_actual is not None and not portfolio_actual.empty:
             # Comparamos con la versión anterior para escribir solo si hay cambios
-            if portfolio_anterior is None or not portfolio_actual.equals(portfolio_anterior):
+            if portfolio_anterior is None or not portfolio_actual.equals(portfolio_actual):
                 
                 # --- INICIO DEL TRUCO VISUAL ---
                 app.screen_updating = False
