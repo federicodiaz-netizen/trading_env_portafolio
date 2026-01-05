@@ -1,3 +1,4 @@
 # Solo ocultamos las credenciales
 .env
+.xlsb
 __pycache__/

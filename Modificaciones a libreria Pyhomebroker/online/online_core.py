@@ -93,11 +93,6 @@ class OnlineCore(object, metaclass=ABCMeta):
         # df.columns = self.__personal_portfolio_columns
         # df = convert_to_numeric_columns(df, numeric_columns)
         
-        # Agregamos un print para ver los nombres reales que manda el broker
-        print("--- COLUMNAS REALES DEL BROKER ---")
-        print(df.columns.tolist())
-        print("----------------------------------")
-        
         return df # Devolvemos la tabla tal cual viene del broker
         # -------------------------------------
 
