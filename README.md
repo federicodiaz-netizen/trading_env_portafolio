@@ -61,6 +61,9 @@ y utiliza la libreria pyhomebroker https://github.com/crapher/pyhomebroker
     HB_PASS="TU CONTRASENA"
     ```
     Reemplaza los valores de ejemplo con tus credenciales reales.
+3. **Crckea la liberia pyhomebroker**
+    Encuentra la carpeta contenedora de la libreria (un ejemplo esta en el .txt) si es de un entorno de Anaconda buscarlo alli.
+    una ves encuentren la carpeta reemplazar la carpeta "online" por la que esta aqui en el repositorio.
 
 ## Uso
 
@@ -73,4 +76,11 @@ y utiliza la libreria pyhomebroker https://github.com/crapher/pyhomebroker
 
 ## Descargo de Responsabilidad
 
-Esta herramienta está destinada únicamente a fines educativos y personales. No es un consejo financiero. la modificacion de la libreria esta en version de prueba, por lo cual realizarlo bajo su responsabilidad.
+Esta herramienta está destinada únicamente a fines educativos y personales. No es un consejo financiero. la modificacion de la libreria esta en version de prueba, por lo cual realizarlo bajo su responsabilidad. Esto es hecho con fines no comerciales y solo educativos.
+Esta version beta fue testeada con el broker Matriz Byma Id 284. el uso en otros brokers se ira testeando proximamente y se ira actualizando.
+
+## Invitacion
+Soy un profesional de la ingenieria en gestion de empresas industriales, por lo que me gustaria invitarte a explorar nuestros sevicios e integraciones.
+www.elevarsoluciones.com
+
+Exitos!!
